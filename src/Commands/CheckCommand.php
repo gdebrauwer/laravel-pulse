@@ -83,7 +83,7 @@ class CheckCommand extends Command
      */
     protected function ensureTelescopeEntriesAreCollected(): void
     {
-        if ($this->laravel->bound(\Laravel\Telescope\Contracts\EntriesRepository::class)) {
+        if (! $this->laravel->bound(\Laravel\Telescope\Contracts\EntriesRepository::class)) {
             return;
         }
 
